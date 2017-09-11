@@ -1,0 +1,39 @@
+{
+  "pages":[
+    "pages/loveWall/index",
+    "pages/user-comment/user-comment",
+    "pages/release/release",
+    "pages/loveWall-details/loveWall-details",
+    "pages/user/user",
+    "pages/user-about/user-about",
+    "pages/logs/logs"
+
+  ],
+  "window":{
+    "backgroundColor":"#eeeeee",    
+    "navigationBarBackgroundColor": "red",
+    "navigationBarTitleText": "WeChat",   
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "color":"#E6E6E6",
+    "selectedColor": "#F01905",
+    "borderStyle":"white",
+    "backgroundColor":"#FAFAFA",
+    "list": [
+      {
+        "iconPath":"image/ic/ic-lovewall.png",
+        "selectedIconPath":"image/ic/ic-lovewall-active.png",
+        "pagePath": "pages/loveWall/index",
+        "text": "心墙"
+      },
+
+      {
+        "iconPath":"image/ic/ic-user.png",
+        "selectedIconPath":"image/ic/ic-user-active.png",
+        "pagePath": "pages/user/user",
+        "text": "我"
+      }
+    ]
+  }
+}

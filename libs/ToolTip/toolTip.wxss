@@ -1,0 +1,44 @@
+.v5_tool_tip {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0 16rpx;
+  font-weight: 400;
+  font-size: 30rpx;
+  color: white;
+  background-color: white;
+  white-space: nowrap;
+  overflow-x: hidden;
+  z-index: 1000;
+  position: fixed;
+  top: -35px;
+  min-height: 80rpx;
+  opacity: 0;
+  border-top: 1px solid #FAFAFA;
+  -webkit-box-shadow: 5rpx 0 10rpx rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 5rpx 0 10rpx rgba(0, 0, 0, 0.2);
+  box-shadow: 5rpx 0 10rpx rgba(0, 0, 0, 0.2); }
+
+.v5_tool_tip .v5_info_text {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: auto 12rpx;
+  color: #666; }
+
+.v5_info_success .v5_info_text {
+  color: #09BB07; }
+
+.v5_info_info .v5_info_text {
+  color: #09BB07; }
+
+.v5_info_warn .v5_info_text {
+  color: #FFBE00; }
+
+.v5_info_error .v5_info_text {
+  color: #F76260; }
+
+.v5_tool_tip .v5_info_icon {
+  float: right;
+  margin-right: 16rpx; }

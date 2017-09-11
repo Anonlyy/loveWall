@@ -1,0 +1,24 @@
+<template name="comment-list">
+    <view class="comment" wx:for="{{commentList}}">
+        <navigator class="comment-item"  data-id="{{item.objectId}}" bindtap="goDetails">
+            <view class="comment-content">
+                <view class="comment-text">
+                    {{item.content}}
+                </view>
+                <view class="footer-news">有 <text class="news-num">{{item.comments.length}}</text> 条新的评论</view>
+                <view class="comment-footer">
+                    <view class="footer-applaud">
+                        点赞 <text class="applaud-num">{{item.supportNum.length?item.supportNum.length:'0'}}</text>
+                    </view>
+                    <view class="footer-comment">
+                        评论 <text class="comment-num">{{item.comments.length?item.comments.length:'0'}}</text>
+                    </view>
+                </view>
+            </view>
+            <view class="comment-object">
+                <image src="{{item.contentImg[0]}}"></image>
+            </view>
+        </navigator>
+    </view>
+
+</template>

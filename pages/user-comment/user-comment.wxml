@@ -1,0 +1,8 @@
+<import src="template-comment-list.wxml" />
+<view id="app">
+	<view class="app-main">
+		<view class="comment-list">
+			<template is="comment-list" data="{{commentList}}"/>
+		</view>
+	</view>
+</view>

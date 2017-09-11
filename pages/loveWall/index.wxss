@@ -1,0 +1,131 @@
+#app {
+  overflow-y: hidden; }
+  #app .swiper-container {
+    width: 100%;
+    min-height: 400rpx; }
+    #app .swiper-container .swiper-item {
+      width: 100%;
+      display: block; }
+      #app .swiper-container .swiper-item .slide-image {
+        width: 100%; }
+  #app .tabs {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -ms-transition: all 1s;
+    -o-transition: all 1s;
+    transition: all 1s; }
+    #app .tabs .nav-tabs {
+      width: 100%;
+      height: 75rpx;
+      display: flex;
+      -webkit-box-shadow: 7rpx 0 10rpx rgba(0, 0, 0, 0.2);
+      -moz-box-shadow: 7rpx 0 10rpx rgba(0, 0, 0, 0.2);
+      box-shadow: 7rpx 0 10rpx rgba(0, 0, 0, 0.2); }
+      #app .tabs .nav-tabs .tab-list {
+        line-height: 75rpx;
+        text-align: center;
+        position: relative;
+        flex: 1;
+        border-bottom: 1px solid #eee;
+        color: #000;
+        font-weight: bold;
+        font-size: 28rpx; }
+        #app .tabs .nav-tabs .tab-list::before {
+          content: '';
+          position: absolute;
+          top: 50%;
+          right: 0;
+          -webkit-transform: translate(0, -50%);
+          -moz-transform: translate(0, -50%);
+          -ms-transform: translate(0, -50%);
+          -o-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+          width: 5rpx;
+          background-color: #FBFBFB;
+          height: 40rpx; }
+        #app .tabs .nav-tabs .tab-list:last-child::before {
+          display: none; }
+      #app .tabs .nav-tabs .active {
+        line-height: 75rpx;
+        text-align: center;
+        color: #fc5558;
+        flex: 1;
+        border-bottom: 1px solid red;
+        font-weight: bold;
+        font-size: 28rpx; }
+    #app .tabs .tab-content {
+      height: 60%; }
+      #app .tabs .tab-content .swiper-item {
+        overflow: auto !important;
+        height: auto; }
+      #app .tabs .tab-content .module-content {
+        height: auto;
+        overflow-y: auto; }
+        #app .tabs .tab-content .module-content .tips {
+          display: block;
+          height: 100rpx;
+          line-height: 100rpx;
+          color: #333;
+          text-align: center;
+          font-size: 35rpx;
+          background: linear-gradient(white, #eeeeee); }
+  #app .btn-group {
+    position: fixed;
+    bottom: 45rpx;
+    right: 60rpx; }
+    #app .btn-group button {
+      -webkit-box-shadow: 6rpx 1rpx 6rpx rgba(0, 0, 0, 0.3);
+      -moz-box-shadow: 6rpx 1rpx 6rpx rgba(0, 0, 0, 0.3);
+      box-shadow: 6rpx 1rpx 6rpx rgba(0, 0, 0, 0.3);
+      margin: 0;
+      padding: 0; }
+    #app .btn-group .btn-release {
+      margin-bottom: 30rpx;
+      height: 100rpx;
+      font-size: 0;
+      color: white;
+      background-color: #F01905; }
+      #app .btn-group .btn-release .icon {
+        font-weight: 100;
+        line-height: 100rpx;
+        font-size: 50rpx;
+        width: 100rpx;
+        height: 100rpx; }
+    #app .btn-group .btn-top {
+      -webkit-box-shadow: 6rpx 1rpx 6rpx rgba(0, 0, 0, 0.2);
+      -moz-box-shadow: 6rpx 1rpx 6rpx rgba(0, 0, 0, 0.2);
+      box-shadow: 6rpx 1rpx 6rpx rgba(0, 0, 0, 0.2);
+      height: 100rpx; }
+      #app .btn-group .btn-top .icon-top {
+        font-weight: bold;
+        line-height: 100rpx;
+        font-size: 50rpx;
+        display: inline-block;
+        width: 100rpx;
+        height: 100rpx;
+        background-color: white;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        border-radius: 50%;
+        color: #F01905; }
+  #app .tabs-fixed {
+    position: absolute;
+    -webkit-transform: translateY(-120rpx);
+    -moz-transform: translateY(-120rpx);
+    -ms-transform: translateY(-120rpx);
+    -o-transform: translateY(-120rpx);
+    transform: translateY(-12rpx);
+    top: 0; }
+    #app .tabs-fixed .tab-content {
+      animation: Heightanimate .1s linear;
+      height: 100%; }
+
+@keyframes Heightanimate {
+  from {
+    height: 60%; }
+  to {
+    height: 100%; } }

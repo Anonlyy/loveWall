@@ -1,0 +1,68 @@
+<import src="../../libs/ToolTip/toolTip.wxml"/>
+<view id="app">
+	<view class="app-module">
+		<view class="module-content">
+			<view class="module-header">
+				<text class="title">{{order.title}}</text>
+				<view class="author">
+					{{order.username}}
+					<text class="time">{{time}}</text>
+				</view>
+			</view>
+			<view class="module-body">
+				<image wx:for="{{order.contentImg}}" src="{{item}}" mode="widthFix"></image>
+				<text class="content">
+					{{order.content}}
+				</text>
+			</view>
+			<view class="module-footer">
+				<view class="{{supportNum?'active':''}} footer-support" bindtap="handleSupport">
+					<icon class="icon icon-dianzan"></icon>
+					<text class="support-num">{{supportNum}}</text>
+				</view>
+				<view class="{{comments.length?'active':''}} footer-review">
+					<icon class="icon icon-iconfontconment"></icon>
+					<text class="review-num">{{comments.length}}</text>
+				</view>
+			</view>
+			<view class="after"></view>
+		</view>
+		<view class="module-review">
+			<view class="module-header">
+				<text>全部评论</text>
+			</view>
+			<view class="module-body">
+				<view class="review-list" wx:if="{{order.comments.length>0}}">
+					<view class="review" wx:for="{{comments}}">
+						<view class="review-header">
+							<image class="headImg" src="{{item.author.avatarUrl}}"></image>
+							<view class="user-content">
+								<view class="user-name">{{item.author.nickName}}</view>
+								<text class="time">{{item.formatDate}}</text>
+							</view>
+						</view>
+						<view class="review-body">
+							<text>{{item.commentStr}}</text>
+						</view>
+					</view>
+				</view>
+				<view class="review-empty" wx:else="{{order.comments.length>0}}">
+					这里暂时还没有评论啦╮(╯_╰)╭
+				</view>
+			</view>
+		</view>
+		<view class="btn-review-fixed" bindtap="handleReviewInput" hidden="{{isReview}}">
+			<icon class="icon icon-iconfontconment"></icon>
+		</view>
+		<view class="{{isReview?'affix-bottom-active':''}} affix-bottom">
+			<form bindsubmit="commentSubmit">
+				<input type="text" placeholder="回复:" bindinput="commentInput" />
+				<button class="btn-review" form-type="submit" hover-class="btn-active">发送</button>
+			</form>
+			
+		</view>
+	</view>
+</view>
+<!--提示信息框-->
+<template is="toolTip" data="{{_toolTip_}}"/>
+<!--提示信息框-->

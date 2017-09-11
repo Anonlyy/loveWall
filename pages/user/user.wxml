@@ -1,0 +1,20 @@
+<view id="app">
+	<view class="app-banner">
+		<image class="app-banner" src="{{bannerSrc}}"></image>
+	</view>
+	<view class="app-main">
+		<view class="user-info">
+			<image class="userImg" src="{{userInfo.avatarUrl}}"></image>
+			<text class="username">{{userInfo.nickName}}</text>
+		</view>
+		<view class="userinfo-list">
+			<view class="list-item" wx:for="{{userinfoList}}">
+				<navigator url="{{item.url}}">
+					<icon class="icon {{item.icon}}"></icon>
+					<text class="item-text">{{item.text}}</text>
+					<text class="badeg" wx:if="{{item.badeg}}">{{item.badeg}}</text>
+				</navigator>
+			</view>
+		</view>
+	</view>
+</view>

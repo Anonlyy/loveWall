@@ -1,0 +1,29 @@
+<template name="content-list">
+    <view class="comment" wx:for="{{contentList}}">
+        <navigator class="content-item" data-id="{{item.objectId}}" bindtap="goDetails">
+            <view class="content-header">
+                <image class="headImg" src="{{item.headImg}}"></image>
+                <text class="user-name">{{item.username}}</text>
+            </view>
+            <view class="content-body">
+                <view class="content-text">
+                    <view class="comment-text">
+                        {{item.content}}
+                    </view>
+                    <view class="content-footer">
+                        <view class="footer-applaud">
+                            点赞 <text class="applaud-num">{{item.supportNum.length?item.supportNum.length:'0'}}</text>
+                        </view>
+                        <view class="footer-comment">
+                            评论 <text class="comment-num">{{item.comments.length?item.comments.length:'0'}}</text>
+                        </view>
+                    </view>
+                </view>
+                <view class="content-object">
+                    <image src="{{item.contentImg[0]}}"></image>
+                </view>
+            </view>
+        </navigator>
+    </view>
+
+</template>

@@ -1,0 +1,36 @@
+
+<import src="../../libs/ToolTip/toolTip.wxml"/>
+<view id="app">
+	<form catchsubmit="formSubmit" catchreset="formReset" >
+		<view class="post-container">
+			<input placeholder="标题" name="title" class="input-title" bindinput="titleEventFunc"
+			       placeholder-class="input-class" />
+			<!--<textarea name="content" placeholder="表白内容"  maxlength="150" />-->
+			<textarea class="textarea" name="content" maxlength="150" focus="{{focus}}" placeholder="表白内容"
+			          bindblur="contentEventFunc"/>
+			<image class="upload-image" name="uploadImage" wx:for="{{productSrc}}" data-index="{{index}}" src="{{item}}"
+			       bindlongtap="handDeleteImg"></image>
+			<button class="primary btn-upload" hover-clas="button-hover" bindtap="uploadImg">
+				<icon class="icon icon-jia"></icon>
+			</button>
+			<view class="tip">
+				*长按图片可删除
+			</view>
+			<view class="switch-view">
+				<switch type="checkbox" name="isChecked" bindchange="isNameEventFunc"/>
+				<text>匿名表白</text>
+			</view>
+			<view class="btn-group">
+				<button class="btn-sumbit" hover-class="btn-active" form-type="submit">
+					立即表白
+				</button>
+				<button class="btn-reset" hover-class="btn-active" form-type="reset">
+					重置表单
+				</button>
+			</view>
+		</view>
+	</form>
+</view>
+<!--提示信息框-->
+<template is="toolTip" data="{{_toolTip_}}"/>
+<!--提示信息框-->

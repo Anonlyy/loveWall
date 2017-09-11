@@ -1,0 +1,18 @@
+<view id="app">
+	<view class="app-main">
+		<view class="app-about">
+			<image src="../../image/logo.png" class="ic-logo"></image>
+			<text class="titile">
+				表白墙
+			</text>
+			<text class="ver">v1.0.0.0</text>
+			
+			<text class="author">
+				广东科学技术学院-心墙项目组©版权所有
+				XXXXXXX@qq.com
+				12345678910
+			</text>
+		</view>
+		
+	</view>
+</view>

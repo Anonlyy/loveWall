@@ -1,0 +1,48 @@
+<import src="template-content-list.wxml" />
+<view id="app">
+  <swiper indicator-dots="{{indicatorDots}}" class="swiper-container"
+          autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{imgUrls}}">
+      <swiper-item class="swiper-item">
+        <image src="{{item}}" class="slide-image"/>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="{{isFixed?'tabs-fixed':''}} tabs">
+    <view class="nav-tabs">
+      <view class="tab-list {{currentTab == index?'active':'default'}}" wx:for="{{tabArray}}" wx:for-item="itemName" data-current="{{index}}" bindtap="swichNav">
+       {{itemName}}
+      </view>
+    </view>
+    <swiper current="{{currentTab}}" class="tab-content" duration="300" bindchange="bindChange">
+      <swiper-item class="swiper-item">
+        <scroll-view scroll-top="{{scrollTop}}" class="module-content" bindtouchstart="scrollstart"
+                      bindtouchend="scrollend">
+          <template is="content-list" data="{{contentList}}"/>
+          <view class="tips">
+            End
+          </view>
+          
+        </scroll-view>
+      </swiper-item>
+      <swiper-item class="swiper-item">
+        <view>2</view>
+      </swiper-item>
+      <swiper-item class="swiper-item">
+        <view>3</view>
+      </swiper-item>
+    </swiper>
+  </view>
+  <view class="btn-group">
+    <button class="btn-release" bindtap="goRelease">
+      <icon class="icon icon-jia"></icon>
+    </button>
+    <button class="btn-top" wx:if="{{isBtnShow}}" bindtap="backTop">
+      <icon class="icon icon-top"></icon>
+    </button>
+  </view>
+ 
+
+
+
+</view>

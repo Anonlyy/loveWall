@@ -1,0 +1,10 @@
+#app .app-main {
+  background-color: white;
+  height: 100%;
+  width: 100%;
+  padding-top: 20rpx; }
+  #app .app-main .comment-list {
+    width: 100%;
+    padding: 0 40rpx; }
+    #app .app-main .comment-list .comment:first-child .comment-item {
+      padding-top: 0; }

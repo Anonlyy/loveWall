@@ -1,0 +1,12 @@
+<template name="toolTip">
+    <view wx:if="{{_toolTip_}}" 
+        animation="{{_toolTip_.animation}}"
+        class="{{'v5_fix v5_tool_tip ' + 'v5_info_' + _toolTip_.type}}">
+        <text class="v5_info_text">{{_toolTip_.info}}</text>
+        <icon class="v5_info_icon" 
+            type="{{_toolTip_.icon || 'clear'}}"
+            color="{{_toolTip_.color || 'rgb(244,102,102)'}}"
+            size="22"
+            bindtap="closeToolTip"/>
+    </view>
+</template>
