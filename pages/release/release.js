@@ -49,23 +49,6 @@ Page({
 		var contentVal = _that.data.content;
 		var isChecked = _that.data.isCheck;
 		var userName, headImg;
-		_that.data.tempFilePaths.forEach(function (url, index) {
-			let localFile = url;
-			new AV.File('ImageSrc', {
-				blob: {
-					uri: localFile,
-				}
-			}).save().then(function (file) {
-				// 文件保存成功
-				// productSrc.push(file.url());
-				// _this.setData({
-				// 	productSrc: productSrc
-				// });
-			}, function (error) {
-				// 异常处理
-				console.error(error);
-			});
-		});
 		if (titleVal === "" || titleVal.length <= 0) {
 			toolTip.showToolTip('error', '请填写标题', 2000);
 			return;
@@ -127,7 +110,6 @@ Page({
 
 			wx.navigateBack();
 		}
-
 	},
 	formReset: function () {
 		// var _that = this;
@@ -149,7 +131,23 @@ Page({
 			sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
 			success: function (res) {
 				// 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
-				productSrc.push(res.tempFilePaths);
+				res.tempFilePaths.forEach(function (url, index) {
+					let localFile = url;
+					new AV.File('ImageSrc', {
+						blob: {
+							uri: localFile,
+						}
+					}).save().then(function (file) {
+						// 文件保存成功
+						productSrc.push(file.url());
+						_this.setData({
+							productSrc: productSrc
+						});
+					}, function (error) {
+						// 异常处理
+						console.error(error);
+					});
+				});
 				_this.setData({
 					productSrc: productSrc,
 					tempFilePaths: res.tempFilePaths
